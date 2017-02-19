@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1AB4B4841E5A110700C40182 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4B4831E5A110700C40182 /* AppDelegate.swift */; };
-		1AB4B4861E5A110700C40182 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4B4851E5A110700C40182 /* ViewController.swift */; };
+		1AB4B4861E5A110700C40182 /* MemasiqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4B4851E5A110700C40182 /* MemasiqViewController.swift */; };
 		1AB4B4891E5A110700C40182 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4B4871E5A110700C40182 /* Main.storyboard */; };
 		1AB4B48B1E5A110700C40182 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4B48A1E5A110700C40182 /* Assets.xcassets */; };
 		1AB4B48E1E5A110700C40182 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4B48C1E5A110700C40182 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		1AB4B4801E5A110700C40182 /* MemasiQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemasiQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB4B4831E5A110700C40182 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1AB4B4851E5A110700C40182 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1AB4B4851E5A110700C40182 /* MemasiqViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemasiqViewController.swift; sourceTree = "<group>"; };
 		1AB4B4881E5A110700C40182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AB4B48A1E5A110700C40182 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AB4B48D1E5A110700C40182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				1AB4B4831E5A110700C40182 /* AppDelegate.swift */,
-				1AB4B4851E5A110700C40182 /* ViewController.swift */,
+				1AB4B4851E5A110700C40182 /* MemasiqViewController.swift */,
 				1AB4B4871E5A110700C40182 /* Main.storyboard */,
 				1AB4B48A1E5A110700C40182 /* Assets.xcassets */,
 				1AB4B48C1E5A110700C40182 /* LaunchScreen.storyboard */,
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AB4B4861E5A110700C40182 /* ViewController.swift in Sources */,
+				1AB4B4861E5A110700C40182 /* MemasiqViewController.swift in Sources */,
 				1AB4B4841E5A110700C40182 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +263,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N47XY52856;
 				INFOPLIST_FILE = MemasiQ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stenpety.MemasiQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,6 +277,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N47XY52856;
 				INFOPLIST_FILE = MemasiQ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stenpety.MemasiQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
