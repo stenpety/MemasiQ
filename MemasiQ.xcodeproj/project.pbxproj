@@ -12,6 +12,7 @@
 		1AB4B4891E5A110700C40182 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4B4871E5A110700C40182 /* Main.storyboard */; };
 		1AB4B48B1E5A110700C40182 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4B48A1E5A110700C40182 /* Assets.xcassets */; };
 		1AB4B48E1E5A110700C40182 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4B48C1E5A110700C40182 /* LaunchScreen.storyboard */; };
+		1AB4B4991E5B5B9800C40182 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4B4981E5B5B9800C40182 /* TextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		1AB4B48A1E5A110700C40182 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AB4B48D1E5A110700C40182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AB4B48F1E5A110700C40182 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AB4B4981E5B5B9800C40182 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +59,20 @@
 				1AB4B4831E5A110700C40182 /* AppDelegate.swift */,
 				1AB4B4851E5A110700C40182 /* MemasiqViewController.swift */,
 				1AB4B4871E5A110700C40182 /* Main.storyboard */,
+				1AB4B4971E5B5B5F00C40182 /* Delegates */,
 				1AB4B48A1E5A110700C40182 /* Assets.xcassets */,
 				1AB4B48C1E5A110700C40182 /* LaunchScreen.storyboard */,
 				1AB4B48F1E5A110700C40182 /* Info.plist */,
 			);
 			path = MemasiQ;
+			sourceTree = "<group>";
+		};
+		1AB4B4971E5B5B5F00C40182 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				1AB4B4981E5B5B9800C40182 /* TextFieldDelegate.swift */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				1AB4B4861E5A110700C40182 /* MemasiqViewController.swift in Sources */,
 				1AB4B4841E5A110700C40182 /* AppDelegate.swift in Sources */,
+				1AB4B4991E5B5B9800C40182 /* TextFieldDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +316,7 @@
 				1AB4B4941E5A110700C40182 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

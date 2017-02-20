@@ -28,25 +28,31 @@
                                     <constraint firstAttribute="height" constant="44" id="EBc-eY-OEA"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Share" id="TRF-Cb-BEV"/>
+                                    <barButtonItem tag="1" title="Share" id="TRF-Cb-BEV"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hSf-Wl-trb"/>
-                                    <barButtonItem title="Cancel" id="eOl-kf-qRF"/>
+                                    <barButtonItem tag="2" title="Cancel" id="eOl-kf-qRF"/>
                                 </items>
                             </toolbar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9YZ-aM-ZMU">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-40" translatesAutoresizingMaskIntoConstraints="NO" id="9YZ-aM-ZMU">
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vLP-CD-4Rj">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="285"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="40" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vLP-CD-4Rj">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="msz-Fv-SJa"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cvm-E0-LbD">
-                                        <rect key="frame" x="0.0" y="285" width="375" height="244"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Cvm-E0-LbD">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5u-tM-ztz">
-                                        <rect key="frame" x="0.0" y="529" width="375" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="40" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5u-tM-ztz">
+                                        <rect key="frame" x="0.0" y="519" width="375" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="AC3-k3-4Fz"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -60,9 +66,9 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="GR2-o0-5hi"/>
-                                    <barButtonItem tag="1" title="📷" id="nZx-Nl-NTi"/>
+                                    <barButtonItem tag="3" title="📷" id="nZx-Nl-NTi"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="JIG-cO-lRv"/>
-                                    <barButtonItem tag="2" title="🎞" id="zed-fs-wVq"/>
+                                    <barButtonItem tag="4" title="🎞" id="zed-fs-wVq"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Mya-hI-7h0"/>
                                 </items>
                             </toolbar>
@@ -81,6 +87,12 @@
                             <constraint firstItem="UME-2g-jvu" firstAttribute="top" secondItem="9YZ-aM-ZMU" secondAttribute="bottom" symbolic="YES" id="xok-JC-CM1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bottomTextField" destination="t5u-tM-ztz" id="rmv-b2-Gks"/>
+                        <outlet property="cameraBarButton" destination="nZx-Nl-NTi" id="c0D-SJ-8ZH"/>
+                        <outlet property="memasImageView" destination="Cvm-E0-LbD" id="1VV-lW-bat"/>
+                        <outlet property="topTextField" destination="vLP-CD-4Rj" id="7JK-br-spB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
