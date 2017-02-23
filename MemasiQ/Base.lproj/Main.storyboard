@@ -33,25 +33,26 @@
                                     <barButtonItem tag="2" title="Cancel" id="eOl-kf-qRF"/>
                                 </items>
                             </toolbar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-40" translatesAutoresizingMaskIntoConstraints="NO" id="9YZ-aM-ZMU">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-50" translatesAutoresizingMaskIntoConstraints="NO" id="9YZ-aM-ZMU">
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="40" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vLP-CD-4Rj">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="msz-Fv-SJa"/>
+                                            <constraint firstAttribute="height" constant="50" id="msz-Fv-SJa"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Cvm-E0-LbD">
+                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="Cvm-E0-LbD">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="40" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5u-tM-ztz">
-                                        <rect key="frame" x="0.0" y="519" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="509" width="375" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="AC3-k3-4Fz"/>
+                                            <constraint firstAttribute="height" constant="50" id="AC3-k3-4Fz"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -66,9 +67,17 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="GR2-o0-5hi"/>
-                                    <barButtonItem tag="3" title="📷" id="nZx-Nl-NTi"/>
+                                    <barButtonItem tag="3" title="📷" id="nZx-Nl-NTi">
+                                        <connections>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="rt0-8x-cM6"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="JIG-cO-lRv"/>
-                                    <barButtonItem tag="4" title="🎞" id="zed-fs-wVq"/>
+                                    <barButtonItem tag="4" title="🎞" id="zed-fs-wVq">
+                                        <connections>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="2Wn-TS-QZy"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Mya-hI-7h0"/>
                                 </items>
                             </toolbar>
