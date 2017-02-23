@@ -19,15 +19,6 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     // MARK: Properties
     let textFieldDelegate = TextFieldDelegate()
     
-    let memasTextAttributes:[String:Any] = [
-        NSStrokeColorAttributeName: UIColor.black,
-        NSForegroundColorAttributeName: UIColor.white,
-        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName: 2.0
-    ]
-    let TOP_PLACEHOLDER = "TOP"
-    let BOTTOM_PLACEHOLDER = "BOTTOM"
-    
     // MARK: View setup
     override func viewDidLoad() {
         super.viewDidLoad()
