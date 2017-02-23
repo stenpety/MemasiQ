@@ -17,7 +17,6 @@ class MemasiqViewController: UIViewController {
     @IBOutlet weak var cameraBarButton: UIBarButtonItem!
     
     let textFieldDelegate = TextFieldDelegate()
-    let bottomTextFieldDelegate = BottomTextFieldDelegate()
     
     let memasTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: UIColor.black,
@@ -65,11 +64,15 @@ class MemasiqViewController: UIViewController {
     
     // Move the view when keyboard appears (while editing bottom text)
     func keyboardWillShow(notification: NSNotification) {
-        view.frame.origin.y -= getKeyboardHeight(notification: notification)
+        if bottomTextField.isFirstResponder {
+            view.frame.origin.y -= getKeyboardHeight(notification: notification)
+        }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        view.frame.origin.y += getKeyboardHeight(notification: notification)
+        if bottomTextField.isFirstResponder {
+            view.frame.origin.y += getKeyboardHeight(notification: notification)
+        }
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
