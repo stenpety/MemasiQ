@@ -30,12 +30,14 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
         topTextField.defaultTextAttributes = memasTextAttributes
         topTextField.textAlignment = NSTextAlignment.center
         topTextField.attributedPlaceholder = NSAttributedString(string: TOP_PLACEHOLDER, attributes: memasTextAttributes)
+        topTextField.superview?.bringSubview(toFront: topTextField)
         topTextField.delegate = textFieldDelegate
         
         // Setup Bottom text field
         bottomTextField.defaultTextAttributes = memasTextAttributes
         bottomTextField.textAlignment = NSTextAlignment.center
         bottomTextField.attributedPlaceholder = NSAttributedString(string: BOTTOM_PLACEHOLDER, attributes: memasTextAttributes)
+        bottomTextField.superview?.bringSubview(toFront: bottomTextField)
         bottomTextField.delegate = textFieldDelegate
     }
     
