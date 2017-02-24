@@ -15,6 +15,7 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var memasImageView: UIImageView!
     @IBOutlet weak var cameraBarButton: UIBarButtonItem!
+    @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     
     // MARK: Properties
     let textFieldDelegate = TextFieldDelegate()
@@ -45,6 +46,7 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewWillAppear(animated)
         self.subscribeToKeyboardNotifications()
         cameraBarButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        cancelBarButton.isEnabled = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -112,6 +114,16 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: Generate & save Meme image
+    func generateMemeImage() -> UIImage {
+        UIGraphicsBeginImageContext(memasImageView.frame.size)
+        memasImageView.drawHierarchy(in: memasImageView.frame, afterScreenUpdates: true)
+        let memedImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return memedImage
     }
     
 }

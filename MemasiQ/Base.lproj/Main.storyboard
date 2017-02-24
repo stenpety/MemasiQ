@@ -98,6 +98,7 @@
                     <connections>
                         <outlet property="bottomTextField" destination="t5u-tM-ztz" id="rmv-b2-Gks"/>
                         <outlet property="cameraBarButton" destination="nZx-Nl-NTi" id="c0D-SJ-8ZH"/>
+                        <outlet property="cancelBarButton" destination="eOl-kf-qRF" id="EPZ-tQ-7xO"/>
                         <outlet property="memasImageView" destination="Cvm-E0-LbD" id="1VV-lW-bat"/>
                         <outlet property="topTextField" destination="vLP-CD-4Rj" id="7JK-br-spB"/>
                     </connections>
