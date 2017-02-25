@@ -21,3 +21,5 @@ let memasTextAttributes:[String:Any] = [
     NSFontAttributeName: UIFont(name: MEMAS_FONT, size: MEMAS_FONT_SIZE)!,
     NSStrokeWidthAttributeName: MEMAS_STROKE_ATTR
 ]
+
+let textFieldIsNotEmptyKey = NSNotification(name: NSNotification.Name(rawValue: "textFieldIsNotEmptyKey"), object: nil)

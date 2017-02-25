@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="height" constant="44" id="EBc-eY-OEA"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem tag="1" title="Share" id="TRF-Cb-BEV">
+                                    <barButtonItem tag="1" systemItem="action" id="TRF-Cb-BEV">
                                         <connections>
                                             <action selector="shareMemas:" destination="BYZ-38-t0r" id="bGH-oE-qPP"/>
                                         </connections>

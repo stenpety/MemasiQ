@@ -37,19 +37,9 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Setup ImageView to properly scale selected image
         memasImageView.contentMode = UIViewContentMode.scaleAspectFit
         
-        // Setup Top text field
-        topTextField.defaultTextAttributes = memasTextAttributes
-        topTextField.textAlignment = NSTextAlignment.center
-        topTextField.attributedPlaceholder = NSAttributedString(string: TOP_PLACEHOLDER, attributes: memasTextAttributes)
-        topTextField.superview?.bringSubview(toFront: topTextField)
-        topTextField.delegate = textFieldDelegate
-        
-        // Setup Bottom text field
-        bottomTextField.defaultTextAttributes = memasTextAttributes
-        bottomTextField.textAlignment = NSTextAlignment.center
-        bottomTextField.attributedPlaceholder = NSAttributedString(string: BOTTOM_PLACEHOLDER, attributes: memasTextAttributes)
-        bottomTextField.superview?.bringSubview(toFront: bottomTextField)
-        bottomTextField.delegate = textFieldDelegate
+        // Setup text fields
+        setupTextField(topTextField, withPlaceholderText: TOP_PLACEHOLDER, withDelegate: textFieldDelegate)
+        setupTextField(bottomTextField, withPlaceholderText: BOTTOM_PLACEHOLDER, withDelegate: textFieldDelegate)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,11 +49,15 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Disable inactive buttons
         cameraBarButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         setAuxButtonsState(active: false)
+        
+        // Add observer for enabling 'Clear' button if any text field was edited
+        NotificationCenter.default.addObserver(self, selector: #selector(setClearButtonEnabled), name: textFieldIsNotEmptyKey.name, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.unsubscribeFromKeyboardNotifications()
+        NotificationCenter.default.removeObserver(self, name: textFieldIsNotEmptyKey.name, object: nil)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -178,9 +172,22 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     // MARK: Auxiliary functions
+    func setupTextField(_ textField: UITextField, withPlaceholderText placeholderText: String, withDelegate textFieldDelegate: UITextFieldDelegate) {
+        textField.defaultTextAttributes = memasTextAttributes
+        textField.textAlignment = NSTextAlignment.center
+        textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: memasTextAttributes)
+        textField.superview?.bringSubview(toFront: textField)
+        textField.delegate = textFieldDelegate
+    }
+    
+    
     func setAuxButtonsState(active: Bool) {
         clearBarButton.isEnabled = active
         shareBarButton.isEnabled = active
+    }
+    
+    func setClearButtonEnabled() {
+        clearBarButton.isEnabled = true
     }
     
     func setToolbarsHidden(to hidden: Bool) {
