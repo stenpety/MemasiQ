@@ -15,9 +15,11 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var memasImageView: UIImageView!
     @IBOutlet weak var cameraBarButton: UIBarButtonItem!
-    @IBOutlet weak var cancelBarButton: UIBarButtonItem!
+    @IBOutlet weak var shareBarButton: UIBarButtonItem!
+    @IBOutlet weak var clearBarButton: UIBarButtonItem!
     
     // MARK: Properties
+    var memas: Memas? = nil //property to store generated meme - main VC scope
     let textFieldDelegate = TextFieldDelegate()
     
     // MARK: View setup
@@ -45,8 +47,10 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.subscribeToKeyboardNotifications()
+        
+        // Disable inactive buttons
         cameraBarButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        cancelBarButton.isEnabled = false
+        setAuxButtonsState(active: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -109,12 +113,23 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             memasImageView.image = pickedImage
         }
-        self.dismiss(animated: true, completion: nil)
+        
+        self.dismiss(animated: true, completion: {() in
+            self.setAuxButtonsState(active: true)})
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func clearMemas(_ sender: Any) {
+        topTextField.text = nil
+        bottomTextField.text = nil
+        memasImageView.image = nil
+        memas = nil
+        setAuxButtonsState(active: false)
+    }
+    
     
     // MARK: Generate & save Meme image
     func generateMemeImage() -> UIImage {
@@ -126,5 +141,28 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
         return memedImage
     }
     
+    func saveMemas() {
+        if let topText = topTextField.text, let bottomText = bottomTextField.text, let originalImage = memasImageView.image {
+            memas?.topText = topText
+            print(topText)
+            memas?.bottomText = bottomText
+            memas?.originalImage = originalImage
+            memas?.memedImage = generateMemeImage()
+        } else {
+            let unableToSaveAlert = UIAlertController(title: "Meme was not saved!", message: "Unable to save an empty meme", preferredStyle: .alert)
+            unableToSaveAlert.addAction(.init(title: "Dismiss", style: .cancel, handler: nil))
+            self.present(unableToSaveAlert, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func shareMemas(_ sender: Any) {
+        saveMemas()
+    }
+    
+    // MARK: Auxiliary functions
+    func setAuxButtonsState(active: Bool) {
+        clearBarButton.isEnabled = active
+        shareBarButton.isEnabled = active
+    }
 }
 

@@ -14,5 +14,7 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+    }
 }

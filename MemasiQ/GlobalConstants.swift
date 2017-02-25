@@ -13,7 +13,7 @@ let TOP_PLACEHOLDER = "TOP"
 let BOTTOM_PLACEHOLDER = "BOTTOM"
 let MEMAS_FONT = "HelveticaNeue-CondensedBlack"
 let MEMAS_FONT_SIZE:CGFloat = 40
-let MEMAS_STROKE_ATTR = -2.0
+let MEMAS_STROKE_ATTR = -5.0
 
 let memasTextAttributes:[String:Any] = [
     NSStrokeColorAttributeName: UIColor.black,

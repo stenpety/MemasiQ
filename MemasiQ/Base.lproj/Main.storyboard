@@ -28,9 +28,17 @@
                                     <constraint firstAttribute="height" constant="44" id="EBc-eY-OEA"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem tag="1" title="Share" id="TRF-Cb-BEV"/>
+                                    <barButtonItem tag="1" title="Share" id="TRF-Cb-BEV">
+                                        <connections>
+                                            <action selector="shareMemas:" destination="BYZ-38-t0r" id="bGH-oE-qPP"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hSf-Wl-trb"/>
-                                    <barButtonItem tag="2" title="Cancel" id="eOl-kf-qRF"/>
+                                    <barButtonItem tag="2" title="Clear" id="eOl-kf-qRF">
+                                        <connections>
+                                            <action selector="clearMemas:" destination="BYZ-38-t0r" id="Udi-ab-NUw"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <stackView contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-50" translatesAutoresizingMaskIntoConstraints="NO" id="9YZ-aM-ZMU">
@@ -98,8 +106,9 @@
                     <connections>
                         <outlet property="bottomTextField" destination="t5u-tM-ztz" id="rmv-b2-Gks"/>
                         <outlet property="cameraBarButton" destination="nZx-Nl-NTi" id="c0D-SJ-8ZH"/>
-                        <outlet property="cancelBarButton" destination="eOl-kf-qRF" id="EPZ-tQ-7xO"/>
+                        <outlet property="clearBarButton" destination="eOl-kf-qRF" id="BqK-Mc-3Rf"/>
                         <outlet property="memasImageView" destination="Cvm-E0-LbD" id="1VV-lW-bat"/>
+                        <outlet property="shareBarButton" destination="TRF-Cb-BEV" id="Lij-fX-yQm"/>
                         <outlet property="topTextField" destination="vLP-CD-4Rj" id="7JK-br-spB"/>
                     </connections>
                 </viewController>
