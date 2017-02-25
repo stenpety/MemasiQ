@@ -19,7 +19,7 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var clearBarButton: UIBarButtonItem!
     
     // MARK: Properties
-    var memas: Memas? = nil //property to store generated meme - main VC scope
+    var memas = Memas() //property to store generated meme - main VC scope
     let textFieldDelegate = TextFieldDelegate()
     
     // MARK: View setup
@@ -126,7 +126,7 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
         topTextField.text = nil
         bottomTextField.text = nil
         memasImageView.image = nil
-        memas = nil
+        
         setAuxButtonsState(active: false)
     }
     
@@ -143,11 +143,10 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func saveMemas() {
         if let topText = topTextField.text, let bottomText = bottomTextField.text, let originalImage = memasImageView.image {
-            memas?.topText = topText
-            print(topText)
-            memas?.bottomText = bottomText
-            memas?.originalImage = originalImage
-            memas?.memedImage = generateMemeImage()
+            memas.topText = topText
+            memas.bottomText = bottomText
+            memas.originalImage = originalImage
+            memas.memedImage = generateMemeImage()
         } else {
             let unableToSaveAlert = UIAlertController(title: "Meme was not saved!", message: "Unable to save an empty meme", preferredStyle: .alert)
             unableToSaveAlert.addAction(.init(title: "Dismiss", style: .cancel, handler: nil))
@@ -157,6 +156,11 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func shareMemas(_ sender: Any) {
         saveMemas()
+        
+        if let memedImage = memas.memedImage {
+            let shareActivityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: [])
+            self.present(shareActivityVC, animated: true, completion: nil)
+        }
     }
     
     // MARK: Auxiliary functions
