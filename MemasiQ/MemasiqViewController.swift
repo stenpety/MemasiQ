@@ -11,12 +11,20 @@ import UIKit
 class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: Outlets
+    
+    // Meme core parts
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var memasImageView: UIImageView!
+    
+    // Toolbar Buttons
     @IBOutlet weak var cameraBarButton: UIBarButtonItem!
     @IBOutlet weak var shareBarButton: UIBarButtonItem!
     @IBOutlet weak var clearBarButton: UIBarButtonItem!
+    
+    // Toolbars
+    @IBOutlet weak var topToolbar: UIToolbar!
+    @IBOutlet weak var bottomToolbar: UIToolbar!
     
     // MARK: Properties
     var memas = Memas() //property to store generated meme - main VC scope
@@ -133,10 +141,16 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     // MARK: Generate & save Meme image
     func generateMemeImage() -> UIImage {
-        UIGraphicsBeginImageContext(memasImageView.frame.size)
-        memasImageView.drawHierarchy(in: memasImageView.frame, afterScreenUpdates: true)
+        // Hide toolbars
+        setToolbarsHidden(to: true)
+        
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
         let memedImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
+        
+        // Bring toolbars back
+        setToolbarsHidden(to: false)
         
         return memedImage
     }
@@ -167,6 +181,11 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     func setAuxButtonsState(active: Bool) {
         clearBarButton.isEnabled = active
         shareBarButton.isEnabled = active
+    }
+    
+    func setToolbarsHidden(to hidden: Bool) {
+        topToolbar.isHidden = hidden
+        bottomToolbar.isHidden = hidden
     }
 }
 

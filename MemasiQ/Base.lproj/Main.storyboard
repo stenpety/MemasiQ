@@ -105,11 +105,13 @@
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="t5u-tM-ztz" id="rmv-b2-Gks"/>
+                        <outlet property="bottomToolbar" destination="UME-2g-jvu" id="cTO-0K-2vb"/>
                         <outlet property="cameraBarButton" destination="nZx-Nl-NTi" id="c0D-SJ-8ZH"/>
                         <outlet property="clearBarButton" destination="eOl-kf-qRF" id="BqK-Mc-3Rf"/>
                         <outlet property="memasImageView" destination="Cvm-E0-LbD" id="1VV-lW-bat"/>
                         <outlet property="shareBarButton" destination="TRF-Cb-BEV" id="Lij-fX-yQm"/>
                         <outlet property="topTextField" destination="vLP-CD-4Rj" id="7JK-br-spB"/>
+                        <outlet property="topToolbar" destination="E7b-al-I4X" id="ZaU-7e-Wni"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
