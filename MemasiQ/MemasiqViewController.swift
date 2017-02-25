@@ -163,12 +163,9 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func shareMemas(_ sender: Any) {
-        saveMemas()
-        
-        if let memedImage = memas.memedImage {
-            let shareActivityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: [])
-            self.present(shareActivityVC, animated: true, completion: nil)
-        }
+        let memedImage = generateMemeImage()
+        let shareActivityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: [])
+        self.present(shareActivityVC, animated: true, completion: {() in self.saveMemas()})
     }
     
     // MARK: Auxiliary functions
