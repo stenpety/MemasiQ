@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemasiqViewController.swift
 //  MemasiQ
 //
 //  Created by Petr Stenin on 19/02/2017.
@@ -68,14 +68,14 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     // MARK: Move the view when keyboard appears (while editing bottom text)
     func keyboardWillShow(notification: NSNotification) {
         if bottomTextField.isFirstResponder {
-            view.frame.origin.y -= getKeyboardHeight(notification: notification)
+            view.frame.origin.y = getKeyboardHeight(notification: notification) * (-1)
+        } else if topTextField.isFirstResponder {
+            view.frame.origin.y = 0
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        if bottomTextField.isFirstResponder {
-            view.frame.origin.y += getKeyboardHeight(notification: notification)
-        }
+        view.frame.origin.y = 0
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -124,6 +124,7 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: Clear method
     @IBAction func clearMemas(_ sender: Any) {
         topTextField.text = nil
         bottomTextField.text = nil
@@ -131,7 +132,6 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         setAuxButtonsState(active: false)
     }
-    
     
     // MARK: Generate & save Meme image
     func generateMemeImage() -> UIImage {
@@ -165,7 +165,15 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func shareMemas(_ sender: Any) {
         let memedImage = generateMemeImage()
         let shareActivityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: [])
-        self.present(shareActivityVC, animated: true, completion: {() in self.saveMemas()})
+        
+        shareActivityVC.completionWithItemsHandler = {
+            (activityType, completed, returnedItems, activityError) in
+            if completed {
+                self.saveMemas()
+            }
+        }
+        
+        present(shareActivityVC, animated: true, completion: nil)
     }
     
     // MARK: Auxiliary functions
