@@ -11,7 +11,6 @@ import UIKit
 class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: Outlets
-    
     // Meme core parts
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
@@ -56,10 +55,13 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        // Unsubscribe from all notifications
         self.unsubscribeFromKeyboardNotifications()
         NotificationCenter.default.removeObserver(self, name: textFieldIsNotEmptyKey.name, object: nil)
     }
     
+    // viewWillTransition - hide keyboard while turning device
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         bottomTextField.resignFirstResponder()
@@ -166,6 +168,7 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
         let memedImage = generateMemeImage()
         let shareActivityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: [])
         
+        // Completion handler for ActivityVC - saves meme only in case of success
         shareActivityVC.completionWithItemsHandler = {
             (activityType, completed, returnedItems, activityError) in
             if completed {
