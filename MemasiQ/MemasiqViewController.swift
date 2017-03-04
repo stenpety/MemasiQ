@@ -1,5 +1,5 @@
 //
-//  MemasiqViewController.swift
+//  MemasEditViewController.swift
 //  MemasiQ
 //
 //  Created by Petr Stenin on 19/02/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemasEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: Outlets
     // Meme core parts

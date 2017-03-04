@@ -10,6 +10,7 @@
 		1A2A5AFF1E6AC18000DACE01 /* MemasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A5AFE1E6AC18000DACE01 /* MemasTableViewController.swift */; };
 		1A7BD7A01E5F640B00C37394 /* MemasConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7BD79F1E5F640B00C37394 /* MemasConst.swift */; };
 		1A7BD7A21E60BED300C37394 /* MemasModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7BD7A11E60BED300C37394 /* MemasModel.swift */; };
+		1A9B53811E6B3F3100EB1ED5 /* MemasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B53801E6B3F3100EB1ED5 /* MemasCollectionViewCell.swift */; };
 		1AA3F4CA1E6ABFEA00B9B0D1 /* MemasCollectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA3F4C91E6ABFEA00B9B0D1 /* MemasCollectionCollectionViewController.swift */; };
 		1AB4B4841E5A110700C40182 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4B4831E5A110700C40182 /* AppDelegate.swift */; };
 		1AB4B4861E5A110700C40182 /* MemasiqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4B4851E5A110700C40182 /* MemasiqViewController.swift */; };
@@ -23,6 +24,7 @@
 		1A2A5AFE1E6AC18000DACE01 /* MemasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemasTableViewController.swift; sourceTree = "<group>"; };
 		1A7BD79F1E5F640B00C37394 /* MemasConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemasConst.swift; sourceTree = "<group>"; };
 		1A7BD7A11E60BED300C37394 /* MemasModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemasModel.swift; sourceTree = "<group>"; };
+		1A9B53801E6B3F3100EB1ED5 /* MemasCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemasCollectionViewCell.swift; sourceTree = "<group>"; };
 		1AA3F4C91E6ABFEA00B9B0D1 /* MemasCollectionCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemasCollectionCollectionViewController.swift; sourceTree = "<group>"; };
 		1AB4B4801E5A110700C40182 /* MemasiQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemasiQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB4B4831E5A110700C40182 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				1AB4B4851E5A110700C40182 /* MemasiqViewController.swift */,
 				1AA3F4C91E6ABFEA00B9B0D1 /* MemasCollectionCollectionViewController.swift */,
 				1A2A5AFE1E6AC18000DACE01 /* MemasTableViewController.swift */,
+				1A9B53801E6B3F3100EB1ED5 /* MemasCollectionViewCell.swift */,
 				1A7BD7A11E60BED300C37394 /* MemasModel.swift */,
 				1A7BD79F1E5F640B00C37394 /* MemasConst.swift */,
 				1AB4B4871E5A110700C40182 /* Main.storyboard */,
@@ -162,6 +165,7 @@
 			files = (
 				1A7BD7A21E60BED300C37394 /* MemasModel.swift in Sources */,
 				1AB4B4861E5A110700C40182 /* MemasiqViewController.swift in Sources */,
+				1A9B53811E6B3F3100EB1ED5 /* MemasCollectionViewCell.swift in Sources */,
 				1AB4B4841E5A110700C40182 /* AppDelegate.swift in Sources */,
 				1A2A5AFF1E6AC18000DACE01 /* MemasTableViewController.swift in Sources */,
 				1A7BD7A01E5F640B00C37394 /* MemasConst.swift in Sources */,
