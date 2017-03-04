@@ -25,6 +25,12 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var topToolbar: UIToolbar!
     @IBOutlet weak var bottomToolbar: UIToolbar!
     
+    // Hide status bar
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    
     // MARK: Properties
     var memas = Memas() //property to store generated meme - main VC scope
     let textFieldDelegate = TextFieldDelegate()
