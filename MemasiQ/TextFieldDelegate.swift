@@ -17,7 +17,7 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let _ = textField.text {
-            NotificationCenter.default.post(name: textFieldIsNotEmptyKey.name, object: nil)
+            NotificationCenter.default.post(name: MemasConst.textFieldIsNotEmptyKey.name, object: nil)
         }
     }
 }

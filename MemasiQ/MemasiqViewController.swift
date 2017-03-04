@@ -37,8 +37,8 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
         memasImageView.contentMode = UIViewContentMode.scaleAspectFit
         
         // Setup text fields
-        setupTextField(topTextField, withPlaceholderText: TOP_PLACEHOLDER, withDelegate: textFieldDelegate)
-        setupTextField(bottomTextField, withPlaceholderText: BOTTOM_PLACEHOLDER, withDelegate: textFieldDelegate)
+        setupTextField(topTextField, withPlaceholderText: MemasConst.topPlaceholderText, withDelegate: textFieldDelegate)
+        setupTextField(bottomTextField, withPlaceholderText: MemasConst.bottomPlaceholderText, withDelegate: textFieldDelegate)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,7 +50,7 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
         setAuxButtonsState(active: false)
         
         // Add observer for enabling 'Clear' button if any text field was edited
-        NotificationCenter.default.addObserver(self, selector: #selector(setClearButtonEnabled), name: textFieldIsNotEmptyKey.name, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setClearButtonEnabled), name: MemasConst.textFieldIsNotEmptyKey.name, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -58,7 +58,7 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         // Unsubscribe from all notifications
         self.unsubscribeFromKeyboardNotifications()
-        NotificationCenter.default.removeObserver(self, name: textFieldIsNotEmptyKey.name, object: nil)
+        NotificationCenter.default.removeObserver(self, name: MemasConst.textFieldIsNotEmptyKey.name, object: nil)
     }
     
     // viewWillTransition - hide keyboard while turning device
@@ -181,9 +181,9 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     // MARK: Auxiliary functions
     func setupTextField(_ textField: UITextField, withPlaceholderText placeholderText: String, withDelegate textFieldDelegate: UITextFieldDelegate) {
-        textField.defaultTextAttributes = memasTextAttributes
+        textField.defaultTextAttributes = MemasConst.textAttributes
         textField.textAlignment = NSTextAlignment.center
-        textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: memasTextAttributes)
+        textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: MemasConst.textAttributes)
         textField.superview?.bringSubview(toFront: textField)
         textField.delegate = textFieldDelegate
     }
