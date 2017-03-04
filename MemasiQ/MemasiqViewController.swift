@@ -159,10 +159,11 @@ class MemasiqViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func saveMemas() {
         if let topText = topTextField.text, let bottomText = bottomTextField.text, let originalImage = memasImageView.image {
-            memas.topText = topText
-            memas.bottomText = bottomText
-            memas.originalImage = originalImage
-            memas.memedImage = generateMemeImage()
+            // Save a new meme
+            memas = Memas(topText: topText, bottomText: bottomText, originalImage: originalImage, memedImage: generateMemeImage())
+            
+            // Append the newly generated meme to memes array in AppDelegate
+            (UIApplication.shared.delegate as! AppDelegate).memas.append(memas)
         } else {
             let unableToSaveAlert = UIAlertController(title: "Meme was not saved!", message: "Unable to save an empty meme", preferredStyle: .alert)
             unableToSaveAlert.addAction(.init(title: "Dismiss", style: .cancel, handler: nil))
