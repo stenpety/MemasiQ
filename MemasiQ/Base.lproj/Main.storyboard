@@ -138,8 +138,8 @@
         <!--Sent Memes-->
         <scene sceneID="HPq-d9-im5">
             <objects>
-                <collectionViewController id="NZS-Zq-90c" customClass="MemasCollectionCollectionViewController" customModule="MemasiQ" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="7Xq-sQ-CaZ">
+                <collectionViewController id="NZS-Zq-90c" customClass="MemasCollectionViewController" customModule="MemasiQ" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="7Xq-sQ-CaZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -201,7 +201,7 @@
         <!--Memas Detail View Controller-->
         <scene sceneID="AAd-H3-En3">
             <objects>
-                <viewController id="fkp-GR-EvY" customClass="MemasDetailViewController" customModule="MemasiQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemasDetailViewController" id="fkp-GR-EvY" customClass="MemasDetailViewController" customModule="MemasiQ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k3a-px-29t"/>
                         <viewControllerLayoutGuide type="bottom" id="tka-rI-URK"/>
@@ -215,6 +215,11 @@
                                 <items>
                                     <navigationItem title="Meme Details" id="4vU-2q-TrU">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="etW-8V-5pH"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="OzY-W6-ZeS">
+                                            <connections>
+                                                <action selector="editMemas:" destination="fkp-GR-EvY" id="VTA-fB-tU4"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

@@ -1,5 +1,5 @@
 //
-//  MemasCollectionCollectionViewController.swift
+//  MemasCollectionViewController.swift
 //  MemasiQ
 //
 //  Created by Petr Stenin on 04/03/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemasCollectionCollectionViewController: UICollectionViewController {
+class MemasCollectionViewController: UICollectionViewController {
     
     // Define array of saved memes
     var memas = [Memas]()
@@ -20,6 +20,8 @@ class MemasCollectionCollectionViewController: UICollectionViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupFlowLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,8 +30,6 @@ class MemasCollectionCollectionViewController: UICollectionViewController {
         // Access memes database (in AppDelegate) and get memes array
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.memas = appDelegate.memas
-        
-        setupFlowLayout()
         
         collectionView?.reloadData() // Reload collection view to reflect changes
     }
@@ -48,9 +48,16 @@ class MemasCollectionCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    // MARK: Actions
+    // MARK: - Actions
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = storyboard?.instantiateViewController(withIdentifier: MemasConst.memasDetailVC) as! MemasDetailViewController
+        detailViewController.memas = memas[indexPath.row]
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+    
     @IBAction func addNewMeme(_ sender: UIBarButtonItem) {
-        let memeEditorVC = storyboard!.instantiateViewController(withIdentifier: "MemasEditViewController")
+        let memeEditorVC = storyboard!.instantiateViewController(withIdentifier: MemasConst.memasEditVC)
         self.present(memeEditorVC, animated: true, completion: nil)
     }
     
@@ -64,7 +71,7 @@ class MemasCollectionCollectionViewController: UICollectionViewController {
         setupFlowLayout()
     }
     
-    // MARK: Aux procedures
+    // MARK: - Aux procedures
     func setupFlowLayout() {
         memasFlowLayout.minimumInteritemSpacing = MemasConst.flowMinInteritemSpace
         memasFlowLayout.minimumLineSpacing = MemasConst.flowMinLineSpace

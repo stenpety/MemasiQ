@@ -12,11 +12,17 @@ import UIKit
 class MemasDetailViewController: UIViewController {
     
     @IBOutlet weak var memasDetailImage: UIImageView!
+    var memas = Memas()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        memasDetailImage.image = memas.memedImage
+    }
+    
+    // MARK: Actions
+    @IBAction func editMemas(_ sender: Any) {
+        
     }
     
 }

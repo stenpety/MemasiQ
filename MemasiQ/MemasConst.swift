@@ -14,7 +14,7 @@ struct MemasConst {
     
     private init() {} // To prohibit instantiation of this struct
     
-    // MARK: Constants
+    // MARK: - Constants
     
     // Text for meme top/bottom placeholders
     static let topPlaceholderText = "TOP"
@@ -42,6 +42,10 @@ struct MemasConst {
     static let flowMinInteritemSpace: CGFloat = 3
     static let flowMinLineSpace: CGFloat = 3
     
-    // MARK: Notification keys
+    // MARK: - ViewControllers identificators
+    static let memasEditVC = "MemasEditViewController"
+    static let memasDetailVC = "MemasDetailViewController"
+    
+    // MARK: - Notification keys
     static let textFieldIsNotEmptyKey = NSNotification(name: NSNotification.Name(rawValue: "textFieldIsNotEmptyKey"), object: nil)
 }
