@@ -198,10 +198,10 @@
             </objects>
             <point key="canvasLocation" x="-66.400000000000006" y="408.84557721139436"/>
         </scene>
-        <!--Memas Detail View Controller-->
+        <!--Details-->
         <scene sceneID="AAd-H3-En3">
             <objects>
-                <viewController storyboardIdentifier="MemasDetailViewController" id="fkp-GR-EvY" customClass="MemasDetailViewController" customModule="MemasiQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemasDetailViewController" title="Details" id="fkp-GR-EvY" customClass="MemasDetailViewController" customModule="MemasiQ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k3a-px-29t"/>
                         <viewControllerLayoutGuide type="bottom" id="tka-rI-URK"/>

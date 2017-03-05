@@ -15,6 +15,12 @@ class MemasDetailViewController: UIViewController {
     var memas = Memas()
     
     // MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editMemas(_:)))
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -28,8 +34,10 @@ class MemasDetailViewController: UIViewController {
     }
     
     // MARK: Actions
-    @IBAction func editMemas(_ sender: Any) {
-        
+    func editMemas(_ sender: Any) {
+        let memasEditorVC = storyboard?.instantiateViewController(withIdentifier: MemasConst.memasEditVC) as! MemasEditViewController
+        memasEditorVC.memas = memas
+        self.present(memasEditorVC, animated: true, completion: nil)
     }
     
 }
