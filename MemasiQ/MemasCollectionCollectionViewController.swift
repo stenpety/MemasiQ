@@ -8,22 +8,17 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class MemasCollectionCollectionViewController: UICollectionViewController {
     
     // Define array of saved memes
     var memas = [Memas]()
     
     // MARK: Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Register cell classes
-        self.collectionView!.register(MemasCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-
+        self.collectionView!.register(MemasCollectionViewCell.self, forCellWithReuseIdentifier: MemasConst.collectionViewCellReuseIdentifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,17 +27,16 @@ class MemasCollectionCollectionViewController: UICollectionViewController {
         // Access memes database (in AppDelegate) and get memes array
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.memas = appDelegate.memas
-        collectionView?.reloadData()
+        collectionView?.reloadData() // Reload collection view to reflect changes in saved memes array
     }
     
     // MARK: UICollectionViewDataSource
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memas.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MemasCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MemasConst.collectionViewCellReuseIdentifier, for: indexPath) as! MemasCollectionViewCell
     
         // Configure the cell
     

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// Struct to store memes
 struct Memas {
     var topText: String?
     var bottomText: String?

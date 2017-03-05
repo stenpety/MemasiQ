@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Custom collection view cell that includes an image only
 class MemasCollectionViewCell: UICollectionViewCell {
+    
     
 }

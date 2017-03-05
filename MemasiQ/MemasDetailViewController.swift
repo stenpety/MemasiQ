@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Detail view - shows fullscreen meme picture, used both by table and collection views
 class MemasDetailViewController: UIViewController {
     
     @IBOutlet weak var memasDetailImage: UIImageView!

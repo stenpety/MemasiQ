@@ -28,7 +28,7 @@ class MemasTableViewController: UITableViewController {
         // Access memes database (in AppDelegate) and get memes array
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.memas = appDelegate.memas
-        tableView.reloadData()
+        tableView.reloadData() // Reload table view to reflect changes in saved memes array
     }
     
     // MARK: - Table view data source
@@ -38,7 +38,7 @@ class MemasTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemasTableCell", for: indexPath) as! MemasTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MemasConst.tableViewCellReuseIdentifier, for: indexPath) as! MemasTableViewCell
         
         let memasForCell = memas[indexPath.row] // get a data source for a cell
         

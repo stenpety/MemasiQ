@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Custom table cell that includes an image and 2x labels
 class MemasTableViewCell: UITableViewCell {
     
     @IBOutlet weak var memasTableViewCellImage: UIImageView!

@@ -33,7 +33,12 @@ struct MemasConst {
     ]
     
     // Table view constants
+    static let tableViewCellReuseIdentifier = "MemasTableCell"
     static let rowsInSingleView = 5
+    
+    // Collection view constants
+    static let collectionViewCellReuseIdentifier = "MemasCollectionCell"
+    static let initialNumberOfCellsInRow = 3
     
     // MARK: Notification keys
     static let textFieldIsNotEmptyKey = NSNotification(name: NSNotification.Name(rawValue: "textFieldIsNotEmptyKey"), object: nil)

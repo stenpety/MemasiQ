@@ -189,7 +189,6 @@ class MemasEditViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     // MARK: Auxiliary functions
-    
     @IBAction func cancelEditingMeme(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
