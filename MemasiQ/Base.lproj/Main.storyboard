@@ -156,7 +156,21 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kgW-Jn-f1U">
+                                            <rect key="frame" x="8" y="8" width="104" height="144"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="kgW-Jn-f1U" secondAttribute="bottom" id="BJd-Xr-IqE"/>
+                                    <constraint firstItem="kgW-Jn-f1U" firstAttribute="top" secondItem="pbf-Dk-FMY" secondAttribute="topMargin" id="FJc-gI-wgZ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="kgW-Jn-f1U" secondAttribute="trailing" id="bn1-TW-Kf6"/>
+                                    <constraint firstItem="kgW-Jn-f1U" firstAttribute="leading" secondItem="pbf-Dk-FMY" secondAttribute="leadingMargin" id="f3R-Iu-6AB"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="memasCollectionCellImage" destination="kgW-Jn-f1U" id="cV8-uc-jl0"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -165,12 +179,20 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Sent Memes" id="1lD-Tp-8jA">
+                        <barButtonItem key="leftBarButtonItem" title="Resize" id="de2-nY-Xrf">
+                            <connections>
+                                <action selector="resizeCollectionItems:" destination="NZS-Zq-90c" id="RSJ-i5-hPO"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2Pe-Tk-0PO">
                             <connections>
                                 <action selector="addNewMeme:" destination="NZS-Zq-90c" id="kXN-21-9ZQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="memasFlowLayout" destination="Wsc-6w-euL" id="6KU-8g-jT4"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZ4-uG-pMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

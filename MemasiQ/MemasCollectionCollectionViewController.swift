@@ -13,12 +13,13 @@ class MemasCollectionCollectionViewController: UICollectionViewController {
     // Define array of saved memes
     var memas = [Memas]()
     
+    // Properties
+    @IBOutlet weak var memasFlowLayout: UICollectionViewFlowLayout!
+    var numberOfCellsInRow = MemasConst.initialNumberOfCellsInRow // Set the number of cells to show in row to initial value 3
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Register cell classes
-        self.collectionView!.register(MemasCollectionViewCell.self, forCellWithReuseIdentifier: MemasConst.collectionViewCellReuseIdentifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,7 +28,10 @@ class MemasCollectionCollectionViewController: UICollectionViewController {
         // Access memes database (in AppDelegate) and get memes array
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.memas = appDelegate.memas
-        collectionView?.reloadData() // Reload collection view to reflect changes in saved memes array
+        
+        setupFlowLayout()
+        
+        collectionView?.reloadData() // Reload collection view to reflect changes
     }
     
     // MARK: UICollectionViewDataSource
@@ -37,17 +41,36 @@ class MemasCollectionCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MemasConst.collectionViewCellReuseIdentifier, for: indexPath) as! MemasCollectionViewCell
-    
-        // Configure the cell
-    
+        
+        let memasForCell = memas[indexPath.row] // get a data source for a cell
+        cell.memasCollectionCellImage.image = memasForCell.memedImage!
+        
         return cell
     }
     
-    
-    
-    // MARK: - Actions
+    // MARK: Actions
     @IBAction func addNewMeme(_ sender: UIBarButtonItem) {
         let memeEditorVC = storyboard!.instantiateViewController(withIdentifier: "MemasEditViewController")
         self.present(memeEditorVC, animated: true, completion: nil)
     }
+    
+    @IBAction func resizeCollectionItems(_ sender: UIBarButtonItem) {
+        if numberOfCellsInRow == 5 {
+            numberOfCellsInRow = 2
+        } else {
+            numberOfCellsInRow += 1
+        }
+        
+        setupFlowLayout()
+    }
+    
+    // MARK: Aux procedures
+    func setupFlowLayout() {
+        memasFlowLayout.minimumInteritemSpacing = MemasConst.flowMinInteritemSpace
+        memasFlowLayout.minimumLineSpacing = MemasConst.flowMinLineSpace
+        
+        let dimension = ((collectionView?.frame.size.width)! - CGFloat(numberOfCellsInRow - 1) * MemasConst.flowMinInteritemSpace) / CGFloat(numberOfCellsInRow)
+        memasFlowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
+    
 }

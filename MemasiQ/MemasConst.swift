@@ -39,6 +39,8 @@ struct MemasConst {
     // Collection view constants
     static let collectionViewCellReuseIdentifier = "MemasCollectionCell"
     static let initialNumberOfCellsInRow = 3
+    static let flowMinInteritemSpace: CGFloat = 3
+    static let flowMinLineSpace: CGFloat = 3
     
     // MARK: Notification keys
     static let textFieldIsNotEmptyKey = NSNotification(name: NSNotification.Name(rawValue: "textFieldIsNotEmptyKey"), object: nil)
