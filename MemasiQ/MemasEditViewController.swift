@@ -181,12 +181,19 @@ class MemasEditViewController: UIViewController, UIImagePickerControllerDelegate
             if completed {
                 self.saveMemas()
             }
+            self.dismiss(animated: true, completion: nil)
         }
         
         present(shareActivityVC, animated: true, completion: nil)
     }
     
     // MARK: Auxiliary functions
+    
+    @IBAction func cancelEditingMeme(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    // Set TextField specific properties
     func setupTextField(_ textField: UITextField, withPlaceholderText placeholderText: String, withDelegate textFieldDelegate: UITextFieldDelegate) {
         textField.defaultTextAttributes = MemasConst.textAttributes
         textField.textAlignment = NSTextAlignment.center
@@ -195,7 +202,7 @@ class MemasEditViewController: UIViewController, UIImagePickerControllerDelegate
         textField.delegate = textFieldDelegate
     }
     
-    
+    // Set buttons enabled/disabled
     func setAuxButtonsState(active: Bool) {
         clearBarButton.isEnabled = active
         shareBarButton.isEnabled = active

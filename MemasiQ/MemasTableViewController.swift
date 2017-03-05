@@ -15,8 +15,6 @@ class MemasTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // Access memes database (in AppDelegate) and get memes array
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -37,16 +35,13 @@ class MemasTableViewController: UITableViewController {
         return cell
     }
     */
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: - Actions
+    @IBAction func addNewMeme(_ sender: UIBarButtonItem) {
+        let memasEditorVC = storyboard!.instantiateViewController(withIdentifier: "MemasEditViewController")
+        self.present(memasEditorVC, animated: true, completion: nil)
     }
-    */
-
+    
+    
+    
 }
