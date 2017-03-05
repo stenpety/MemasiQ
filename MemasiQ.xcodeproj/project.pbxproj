@@ -70,8 +70,8 @@
 			children = (
 				1AB4B4831E5A110700C40182 /* AppDelegate.swift */,
 				1AB4B4851E5A110700C40182 /* MemasEditViewController.swift */,
-				1AA3F4C91E6ABFEA00B9B0D1 /* MemasCollectionCollectionViewController.swift */,
 				1A2A5AFE1E6AC18000DACE01 /* MemasTableViewController.swift */,
+				1AA3F4C91E6ABFEA00B9B0D1 /* MemasCollectionCollectionViewController.swift */,
 				1A9B53801E6B3F3100EB1ED5 /* MemasCollectionViewCell.swift */,
 				1A9B53821E6BBB3C00EB1ED5 /* MemasDetailViewController.swift */,
 				1A7BD7A11E60BED300C37394 /* MemasModel.swift */,

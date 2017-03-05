@@ -32,7 +32,7 @@ class MemasEditViewController: UIViewController, UIImagePickerControllerDelegate
     
     
     // MARK: Properties
-    var memas = Memas() //property to store generated meme - main VC scope
+    var memas = Memas() //property to store generated meme
     let textFieldDelegate = TextFieldDelegate()
     
     // MARK: View setup
@@ -181,6 +181,7 @@ class MemasEditViewController: UIViewController, UIImagePickerControllerDelegate
             if completed {
                 self.saveMemas()
             }
+            
             self.dismiss(animated: true, completion: nil)
         }
         

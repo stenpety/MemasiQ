@@ -15,17 +15,26 @@ class MemasCollectionCollectionViewController: UICollectionViewController {
     // Define array of saved memes
     var memas = [Memas]()
     
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Register cell classes
         self.collectionView!.register(MemasCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         // Access memes database (in AppDelegate) and get memes array
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.memas = appDelegate.memas
+        collectionView?.reloadData()
     }
-
+    
     // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

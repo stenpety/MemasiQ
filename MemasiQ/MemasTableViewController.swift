@@ -13,35 +13,36 @@ class MemasTableViewController: UITableViewController {
     // Define array of saved memes
     var memas = [Memas]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         // Access memes database (in AppDelegate) and get memes array
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.memas = appDelegate.memas
+        tableView.reloadData()
     }
-
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memas.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemasTableCell", for: indexPath)
+        let memasForCell = memas[indexPath.row]
+        
+        cell.textLabel?.text = "\(memasForCell.topText ?? "") ... \(memasForCell.bottomText ?? "")"
+        if let memedImage = memasForCell.memedImage {
+            cell.imageView?.image = memedImage
+        }
+        
         return cell
     }
-    */
     
     // MARK: - Actions
     @IBAction func addNewMeme(_ sender: UIBarButtonItem) {
         let memasEditorVC = storyboard!.instantiateViewController(withIdentifier: "MemasEditViewController")
         self.present(memasEditorVC, animated: true, completion: nil)
     }
-    
-    
-    
 }
