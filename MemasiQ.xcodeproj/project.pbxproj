@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A2A5AFF1E6AC18000DACE01 /* MemasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A5AFE1E6AC18000DACE01 /* MemasTableViewController.swift */; };
+		1A33FA931E6C2403007A5B68 /* MemasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A33FA921E6C2403007A5B68 /* MemasTableViewCell.swift */; };
 		1A7BD7A01E5F640B00C37394 /* MemasConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7BD79F1E5F640B00C37394 /* MemasConst.swift */; };
 		1A7BD7A21E60BED300C37394 /* MemasModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7BD7A11E60BED300C37394 /* MemasModel.swift */; };
 		1A9B53811E6B3F3100EB1ED5 /* MemasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B53801E6B3F3100EB1ED5 /* MemasCollectionViewCell.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		1A2A5AFE1E6AC18000DACE01 /* MemasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemasTableViewController.swift; sourceTree = "<group>"; };
+		1A33FA921E6C2403007A5B68 /* MemasTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemasTableViewCell.swift; sourceTree = "<group>"; };
 		1A7BD79F1E5F640B00C37394 /* MemasConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemasConst.swift; sourceTree = "<group>"; };
 		1A7BD7A11E60BED300C37394 /* MemasModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemasModel.swift; sourceTree = "<group>"; };
 		1A9B53801E6B3F3100EB1ED5 /* MemasCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemasCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				1AB4B4831E5A110700C40182 /* AppDelegate.swift */,
 				1AB4B4851E5A110700C40182 /* MemasEditViewController.swift */,
 				1A2A5AFE1E6AC18000DACE01 /* MemasTableViewController.swift */,
+				1A33FA921E6C2403007A5B68 /* MemasTableViewCell.swift */,
 				1AA3F4C91E6ABFEA00B9B0D1 /* MemasCollectionCollectionViewController.swift */,
 				1A9B53801E6B3F3100EB1ED5 /* MemasCollectionViewCell.swift */,
 				1A9B53821E6BBB3C00EB1ED5 /* MemasDetailViewController.swift */,
@@ -171,6 +174,7 @@
 				1A9B53811E6B3F3100EB1ED5 /* MemasCollectionViewCell.swift in Sources */,
 				1AB4B4841E5A110700C40182 /* AppDelegate.swift in Sources */,
 				1A2A5AFF1E6AC18000DACE01 /* MemasTableViewController.swift in Sources */,
+				1A33FA931E6C2403007A5B68 /* MemasTableViewCell.swift in Sources */,
 				1A7BD7A01E5F640B00C37394 /* MemasConst.swift in Sources */,
 				1AA3F4CA1E6ABFEA00B9B0D1 /* MemasCollectionCollectionViewController.swift in Sources */,
 				1A9B53831E6BBB3C00EB1ED5 /* MemasDetailViewController.swift in Sources */,

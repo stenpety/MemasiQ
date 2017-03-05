@@ -14,6 +14,14 @@ class MemasTableViewController: UITableViewController {
     var memas = [Memas]()
     
     // MARK: Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Set height of a table row to room meme image
+        tableView.rowHeight = (tableView.frame.height) / CGFloat(MemasConst.rowsInSingleView)
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -29,12 +37,16 @@ class MemasTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemasTableCell", for: indexPath)
-        let memasForCell = memas[indexPath.row]
+        // Dequeue cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemasTableCell", for: indexPath) as! MemasTableViewCell
         
-        cell.textLabel?.text = "\(memasForCell.topText ?? "") ... \(memasForCell.bottomText ?? "")"
+        let memasForCell = memas[indexPath.row] // get a data source for a cell
+        
+        // Cell setup (text + image)
+        cell.memasTableViewCellTopLabel.text = memasForCell.topText ?? ""
+        cell.memasTableViewCellBottomLabel.text = memasForCell.bottomText ?? ""
         if let memedImage = memasForCell.memedImage {
-            cell.imageView?.image = memedImage
+            cell.memasTableViewCellImage.image = memedImage
         }
         
         return cell

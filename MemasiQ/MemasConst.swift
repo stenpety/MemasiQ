@@ -9,15 +9,18 @@
 import Foundation
 import UIKit
 
-// MARK: Struct with constants used in this project
-
+// Struct with constants used in this project
 struct MemasConst {
     
     private init() {} // To prohibit instantiation of this struct
     
-    // Constants
+    // MARK: Constants
+    
+    // Text for meme top/bottom placeholders
     static let topPlaceholderText = "TOP"
     static let bottomPlaceholderText = "BOTTOM"
+    
+    // Meme text attributes
     static let fontName = "HelveticaNeue-CondensedBlack"
     static let fontSize: CGFloat = 40
     static let strokeAttr = -5.0
@@ -29,6 +32,9 @@ struct MemasConst {
         NSStrokeWidthAttributeName: strokeAttr
     ]
     
-    // Notification keys
+    // Table view constants
+    static let rowsInSingleView = 5
+    
+    // MARK: Notification keys
     static let textFieldIsNotEmptyKey = NSNotification(name: NSNotification.Name(rawValue: "textFieldIsNotEmptyKey"), object: nil)
 }
