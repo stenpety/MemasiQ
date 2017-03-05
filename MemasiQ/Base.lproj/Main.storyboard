@@ -139,7 +139,7 @@
         <scene sceneID="HPq-d9-im5">
             <objects>
                 <collectionViewController id="NZS-Zq-90c" customClass="MemasCollectionViewController" customModule="MemasiQ" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="7Xq-sQ-CaZ">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="7Xq-sQ-CaZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -157,7 +157,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kgW-Jn-f1U">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kgW-Jn-f1U">
                                             <rect key="frame" x="8" y="8" width="104" height="144"/>
                                         </imageView>
                                     </subviews>
@@ -210,32 +210,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9x3-8I-R8N">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Meme Details" id="4vU-2q-TrU">
-                                        <barButtonItem key="backBarButtonItem" title="Back" id="etW-8V-5pH"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="OzY-W6-ZeS">
-                                            <connections>
-                                                <action selector="editMemas:" destination="fkp-GR-EvY" id="VTA-fB-tU4"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EuI-oC-FOS">
-                                <rect key="frame" x="0.0" y="64" width="375" height="595"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="631"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tka-rI-URK" firstAttribute="top" secondItem="EuI-oC-FOS" secondAttribute="bottom" constant="8" symbolic="YES" id="HOA-ep-8Jg"/>
                             <constraint firstItem="EuI-oC-FOS" firstAttribute="leading" secondItem="fZe-NW-0r1" secondAttribute="leadingMargin" constant="-16" id="IEy-Hi-WIZ"/>
-                            <constraint firstItem="EuI-oC-FOS" firstAttribute="top" secondItem="9x3-8I-R8N" secondAttribute="bottom" symbolic="YES" id="JiU-aa-sq8"/>
-                            <constraint firstItem="9x3-8I-R8N" firstAttribute="leading" secondItem="fZe-NW-0r1" secondAttribute="leadingMargin" constant="-16" id="Tqf-XF-FZE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9x3-8I-R8N" secondAttribute="trailing" constant="-16" id="Wi0-lc-0sg"/>
+                            <constraint firstItem="EuI-oC-FOS" firstAttribute="top" secondItem="k3a-px-29t" secondAttribute="bottom" constant="8" symbolic="YES" id="YzR-YT-t4B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EuI-oC-FOS" secondAttribute="trailing" constant="-16" id="lu4-0f-yH6"/>
-                            <constraint firstItem="9x3-8I-R8N" firstAttribute="top" secondItem="k3a-px-29t" secondAttribute="bottom" symbolic="YES" id="nVX-j1-bvB"/>
                         </constraints>
                     </view>
                     <connections>

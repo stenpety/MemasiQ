@@ -14,10 +14,17 @@ class MemasDetailViewController: UIViewController {
     @IBOutlet weak var memasDetailImage: UIImageView!
     var memas = Memas()
     
+    // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         memasDetailImage.image = memas.memedImage
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: Actions
