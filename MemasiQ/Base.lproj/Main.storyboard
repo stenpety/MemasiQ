@@ -279,8 +279,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
-                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="Cvm-E0-LbD">
+                                    <imageView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="Cvm-E0-LbD">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="3lu-Sd-8Kg" appends="YES" id="6hp-Cv-uG4"/>
+                                        </connections>
                                     </imageView>
                                     <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5u-tM-ztz">
                                         <rect key="frame" x="0.0" y="529" width="375" height="50"/>
@@ -341,6 +345,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="3lu-Sd-8Kg">
+                    <connections>
+                        <action selector="zoomMemasImage:" destination="BYZ-38-t0r" id="lWp-bx-rge"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="852" y="-312"/>
         </scene>

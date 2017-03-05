@@ -39,8 +39,9 @@ class MemasEditViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setup ImageView to properly scale selected image
-        memasImageView.contentMode = UIViewContentMode.scaleAspectFit
+        // Setup ImageView
+        memasImageView.contentMode = UIViewContentMode.scaleAspectFit //properly scale selected image
+        memasImageView.isUserInteractionEnabled = true //respond to pinch gesture
         
         // Setup text fields with meme being edited
         if let memas = self.memas {
@@ -201,8 +202,16 @@ class MemasEditViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     // MARK: - Auxiliary functions
+    // Cancel editing and dismiss editor
     @IBAction func cancelEditingMeme(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    // Pinch recognizer
+    @IBAction func zoomMemasImage(_ sender: UIPinchGestureRecognizer) {
+        memasImageView.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
+        print(sender.scale)
+        sender.scale = 1
     }
     
     // Set TextField specific properties
